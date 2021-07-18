@@ -22,7 +22,7 @@ public class findMax<T extends Comparable<T>> {
 		System.out.println("Maximum double value is: " + comparable(maxDouble));
 
 		String[] maxString = { "Haresh","sourabh","vaishnavi","divya","ashish" };
-		System.out.println("Maximum string number  is: " + comparable(maxString));
+		System.out.println("Maximum string is: " + comparable(maxString));
 
 	}
 }
