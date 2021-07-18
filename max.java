@@ -1,18 +1,28 @@
-public class GereicsUC1 {
-	// determines the largest of three Comparable objects
-	public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
-		T max = x; // assume x is initially the largest
+import java.util.*;
 
-		if (y.compareTo(max) > 0)
-			max = y; // y is the largest so far
+public class findMax<T extends Comparable<T>> {
+	T[] elements;
 
-		if (z.compareTo(max) > 0)
-			max = z; // z is the largest
+	public findMax(T[] elements) {
+		this.elements = elements;
+	}
 
-		return max; // returns the largest object
-	} // end method maximum
+	public static <T> T comparable(T[] elements) {
+		Arrays.sort(elements);
+		int length = elements.length;
+		T max = elements[length - 1];
+		return max;
+	}
 
-	public static void main(String args[]) {
-		System.out.printf("Maximum of %s, %s and %s is %s\n", "pear", "apple", "orange", maximum("pear", "apple", "orange"));
+	public static void main(String[] args) {
+		Integer[] maxInt = { 1,12,123,1234,12345};
+		System.out.println("Maximum integer value is: " + comparable(maxInt));
+
+		Double[] maxDouble = {1.2,1.23,12.3,123.123,0.123 };
+		System.out.println("Maximum double value is: " + comparable(maxDouble));
+
+		String[] maxString = { "Haresh","sourabh","vaishnavi","divya","ashish" };
+		System.out.println("Maximum string number  is: " + comparable(maxString));
+
 	}
 }
